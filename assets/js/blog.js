@@ -35,11 +35,12 @@ gql(GET_USER_ARTICLES, { page: 0 })
         let articles = data.data.user.publication.posts
         articles.map(a => {
             const card = tamplate.content.cloneNode(true).children[0]
-            const title = card.querySelector('[data-title]').childNodes[1]
+            const url = card.querySelector('[data-url]')
+            const title = card.querySelector('[data-title]')
             const description = card.querySelector('[data-description]')
             title.textContent = a.title 
-            title.setAttribute('href', `https://blog.vinitparekh.rocks/${a.slug}`)
-            title.setAttribute('target', '_blank')
+            url.setAttribute('href', `https://blog.vinitparekh.rocks/${a.slug}`)
+            url.setAttribute('target', '_blank')
             description.textContent = a.brief.slice(0,100) + ' ...'
             container.append(card)
         })

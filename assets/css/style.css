@@ -59,6 +59,11 @@ a:hover {
   font-weight: 600;
 }
 
+.card-blog:hover{
+  box-shadow: 0 0 15px #444;
+  border: 2px solid;
+}
+
 .box-shadow-a,
 .button:hover {
   text-decoration: none;
